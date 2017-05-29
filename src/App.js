@@ -12,6 +12,7 @@ import ccsf from './img/exp-ccsf.png';
 import opswat from './img/exp-opswat.png';
 import pantheon from './img/exp-pantheon.png';
 import radicaldesigns from './img/exp-radicaldesigns.png';
+import resumePDF from './files/Resume_of_Sara_McCutcheon.pdf'
 
 function Summary() {
   return (
@@ -33,6 +34,51 @@ function Summary() {
   );
 }
 
+function SocialLink(props) {
+  return (
+    <a href={props.url ? props.url : 'https://' + props.name + '.com/tesladethray'}>
+      <i className={'fa fa-' + props.name + ' br-' + props.color}></i>
+    </a>
+  );
+}
+
+function SocialPopup() {
+  return (
+    <div className='head-social'>
+      <SocialLink name='linkedin' color='purple' url='https://linkedin.com/in/tesladethray'/>
+      <SocialLink name='github' color='grey'/>
+      <SocialLink name='download' color='green' url={resumePDF}/>
+      <SocialLink name='facebook' color='blue'/>
+      <SocialLink name='twitter' color='lblue'/>
+    </div>
+  );
+}
+
+class SocialWidget extends Component {
+  constructor() {
+    super();
+    this.state = {
+      visible: false,
+    };
+    this.toggleVisibility = this.toggleVisibility.bind(this)
+  }
+
+  toggleVisibility(i) {
+    this.setState({
+      visible: !this.state.visible,
+    });
+  }
+
+  render() {
+    return (
+      <div id="socialWidget">
+        <a className='br-red hclick' onClick={(i) => this.toggleVisibility(i)}><i className='fa fa-user'></i></a>
+        {this.state.visible ? <SocialPopup/> : null}
+      </div>
+    );
+  }
+}
+
 class App extends Component {
   render() {
     return (
@@ -48,14 +94,7 @@ class App extends Component {
                     <img src={headshot} className="img-responsive img-circle img-thumbnail" alt=""/>
                     <h4>SARA MCCUTCHEON</h4>
                     <h5>Software Engineer</h5>
-                    <a className="br-red hclick"><i className="fa fa-user"></i></a>
-                    <div className="head-social">
-                      <a href="https://linkedin.com/in/tesladethray/"><i className="fa fa-linkedin br-purple"></i></a>
-                      <a href="https://github.com/tesladethray"><i className="fa fa-github br-grey"></i></a>
-                      <a href="files/Resume_of_Sara_McCutcheon.pdf"><i className="fa fa-download br-green"></i></a>
-                      <a href="https://facebook.com/tesladethray"><i className="fa fa-facebook br-blue"></i></a>
-                      <a href="https://twitter.com/tesladethray"><i className="fa fa-twitter br-lblue"></i></a>
-                    </div>
+                    <SocialWidget/>
                   </div>
                 </div>
                 <Summary />
