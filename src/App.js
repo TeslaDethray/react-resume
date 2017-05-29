@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../node_modules/font-awesome/css/font-awesome.min.css'
 import './css/App.css'
 
-import headshot from './img/headshot.png';
-import data from './img/skill-data.png';
-import frontend from './img/skill-frontend.png';
-import photoshop from './img/skill-photoshop.png';
-import translation from './img/skill-translation.png';
-import ccsf from './img/exp-ccsf.png';
-import opswat from './img/exp-opswat.png';
-import pantheon from './img/exp-pantheon.png';
-import radicaldesigns from './img/exp-radicaldesigns.png';
+import headshot from './img/headshot.png'
+import data from './img/skill-data.png'
+import frontend from './img/skill-frontend.png'
+import photoshop from './img/skill-photoshop.png'
+import translation from './img/skill-translation.png'
+import ccsf from './img/exp-ccsf.png'
+import opswat from './img/exp-opswat.png'
+import pantheon from './img/exp-pantheon.png'
+import radicaldesigns from './img/exp-radicaldesigns.png'
 import resumePDF from './files/Resume_of_Sara_McCutcheon.pdf'
 
 function BlockHead(props) {
@@ -21,7 +21,7 @@ function BlockHead(props) {
       <h5>{props.headline}</h5>
       {props.children}
     </div>
-  );
+  )
 }
 
 function SocialLink(props) {
@@ -29,7 +29,7 @@ function SocialLink(props) {
     <a href={props.url ? props.url : 'https://' + props.name + '.com/tesladethray'}>
       <i className={'fa fa-' + props.name + ' br-' + props.color}></i>
     </a>
-  );
+  )
 }
 
 function SocialPopup() {
@@ -41,7 +41,7 @@ function SocialPopup() {
       <SocialLink name='facebook' color='blue'/>
       <SocialLink name='twitter' color='lblue'/>
     </div>
-  );
+  )
 }
 
 class SocialWidget extends Component {
@@ -49,14 +49,14 @@ class SocialWidget extends Component {
     super();
     this.state = {
       visible: false,
-    };
+    }
     this.toggleVisibility = this.toggleVisibility.bind(this)
   }
 
   toggleVisibility(i) {
     this.setState({
       visible: !this.state.visible,
-    });
+    })
   }
 
   render() {
@@ -65,7 +65,7 @@ class SocialWidget extends Component {
         <a className='br-red hclick' onClick={(i) => this.toggleVisibility(i)}><i className='fa fa-user'></i></a>
         {this.state.visible ? <SocialPopup/> : null}
       </div>
-    );
+    )
   }
 }
 
@@ -86,37 +86,47 @@ function Summary() {
           </div>
         </div>
       </div>
-  );
+  )
 }
 
 function TabButton(props) {
   return (
     <li><button className='br-red' onClick={(i) => props.onClick(i)}>{props.label}</button></li>
-  );
+  )
 }
 
 function TabPane(props) {
   return (
-    <div className={props.active ? 'tab-pane active' : 'tab-pane'} id={props.id}>
+    <div className='tab-pane active'>
       <h3>{props.institution}, {props.location}</h3>
       <h5>{props.duration} {props.fieldOfStudy ? '//' : null} {props.fieldOfStudy}</h5>
       <p>{props.comments}</p>
     </div>
-  );
+  )
 }
 
 class TabWidget extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       activeTab: null,
-    };
+    }
+    this.renderChildren =  this.renderChildren.bind(this)
+  }
+
+  renderChildren() {
+    var children = []
+    React.Children.forEach(this.props.children, (child, i) => {
+      if ((child.props.id === this.state.activeTab) || ((i === 0) && this.state.activeTab === null))
+        children.push(child)
+    })
+    return children
   }
 
   renderTabButton(id) {
     return (
       <TabButton label={id.charAt(0).toUpperCase() + id.slice(1)} onClick={() => this.handleClick(id)}/>
-    );
+    )
   }
 
   handleClick(id) {
@@ -126,45 +136,21 @@ class TabWidget extends Component {
   }
 
   render() {
+    const navigationButtons = React.Children.map(this.props.children, child => {
+      return this.renderTabButton(child.props.id)
+    })
     return (
       <div className='tab-widget'>
         <div className='navigation'>
           <ul className='list-unstyled'>
-            {this.renderTabButton('upper')}
-            {this.renderTabButton('lower')}
-            {this.renderTabButton('secondary')}
+            {navigationButtons}
           </ul>
         </div>
         <div className='tab-content'>
-          <TabPane
-            id='upper'
-            active={['upper', null,].indexOf(this.state.activeTab) !== -1}
-            institution='San Francisco State University'
-            location='San Francisco, CA, USA'
-            duration='2009-2012'
-            fieldOfStudy='Computer Science and Mathematics'
-            comments='I completed upper division work for my undergraduate degree at SFSU. Classes included cooperative software development, analysis of operating systems and programming languages, discrete math, linear algebra, and Victorian-era history.'
-          />
-          <TabPane
-            id='lower'
-            active={this.state.activeTab === 'lower'}
-            institution='City College of San Francisco'
-            location='San Francisco, CA, USA'
-            duration='2006-2009'
-            fieldOfStudy='Computer Science'
-            comments='I completed my lower-division undergraduate work at CCSF. Clawing my way all the way up through Calculus 3 from beginning algebra, I also tutored in math and English.'
-          />
-          <TabPane
-            id='secondary'
-            active={this.state.activeTab === 'secondary'}
-            institution='Green Valley High School'
-            location='Henderson, NV, USA'
-            duration='1998-2002'
-            comments='I had a pretty normal high school experience. I placed second in Nevada in extemporaneous speaking (Speech & Debate) and took Spanish and computer science classes.'
-          />
+          {this.renderChildren()}
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -180,7 +166,7 @@ class App extends Component {
               <div className='row'>
                 <div className='col-md-4 col-sm-4'>
                   <div className='head-left text-center'>
-                    <img src={headshot} className='img-responsive img-circle img-thumbnail' alt='An old photo of me'/>
+                    <img src={headshot} className='img-responsive img-circle img-thumbnail' alt='An old pic of me'/>
                     <h4>SARA MCCUTCHEON</h4>
                     <h5>Software Engineer</h5>
                     <SocialWidget/>
@@ -200,7 +186,31 @@ class App extends Component {
                   </BlockHead>
                 </div>
                 <div className='col-md-8 col-sm-8'>
-                  <TabWidget/>
+                  <TabWidget>
+                    <TabPane
+                      id='upper'
+                      institution='San Francisco State University'
+                      location='San Francisco, CA, USA'
+                      duration='2009-2012'
+                      fieldOfStudy='Computer Science and Mathematics'
+                      comments='I completed upper division work for my undergraduate degree at SFSU. Classes included cooperative software development, analysis of operating systems and programming languages, discrete math, linear algebra, and Victorian-era history.'
+                    />
+                    <TabPane
+                      id='lower'
+                      institution='City College of San Francisco'
+                      location='San Francisco, CA, USA'
+                      duration='2006-2009'
+                      fieldOfStudy='Computer Science'
+                      comments='I completed my lower-division undergraduate work at CCSF. Clawing my way all the way up through Calculus 3 from beginning algebra, I also tutored in math and English.'
+                    />
+                    <TabPane
+                      id='secondary'
+                      institution='Green Valley High School'
+                      location='Henderson, NV, USA'
+                      duration='1998-2002'
+                      comments='I had a pretty normal high school experience. I placed second in Nevada in extemporaneous speaking (Speech & Debate) and took Spanish and computer science classes.'
+                    />
+                  </TabWidget>
                 </div>
               </div>
             </div>
