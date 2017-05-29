@@ -13,6 +13,26 @@ import opswat from './img/exp-opswat.png';
 import pantheon from './img/exp-pantheon.png';
 import radicaldesigns from './img/exp-radicaldesigns.png';
 
+function Summary() {
+  return (
+      <div className='col-md-8 col-sm-8'>
+        <div className='head-right'>
+          <h4>Summary</h4>
+          <div className='head-obj'>
+            <div className='obj-icon'>
+              <span>&#8220;</span>
+            </div>
+            <div className='obj-content'>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla efficitur scelerisque purus nec vehicula. Vivamus rutrum aliquam risus. Nam quis turpis pulvinar leo egestas facilisis ac vitae massa. Donec convallis orci vitae ullamcorper condimentum. Phasellus ac euismod odio. Ut viverra augue at est porttitor, at scelerisque lectus imperdiet. Nulla vel eleifend quam. Nullam et iaculis diam. Phasellus nec facilisis ligula.</p>
+              <p>Nullam pretium ultricies blandit. Suspendisse elementum elementum lorem eu semper. Vivamus sit amet justo justo. Integer faucibus velit diam, sed iaculis dolor consequat sit amet. Duis et augue luctus odio ultricies scelerisque. Phasellus consequat a sem vitae commodo.</p>
+              <p>Suspendisse varius euismod ligula eget eleifend. Morbi laoreet mauris ut neque consequat, quis feugiat mauris cursus. Aliquam ultrices purus sed suscipit suscipit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  );
+}
+
 class App extends Component {
   render() {
     return (
@@ -38,21 +58,7 @@ class App extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-8 col-sm-8">
-                  <div className="head-right">
-                    <h4>Summary</h4>
-                    <div className="head-obj">
-                      <div className="obj-icon">
-                        <span>&#8220;</span>
-                      </div>
-                      <div className="obj-content">
-                        <p>I'm a developer in the San Francisco Bay Area. Most of my work experience has been with Radical Designs, a small cooperative which creates websites and other software solutions for non-profit businesses and political groups whom profess values which resonate with ours. I have developed new products from the ground up and from popular web frameworks. I run the gamut from setting up new VPSs, selecting the language and software to work with, doing all the coding and testing, setting up the design, launching, and providing support for the software time and time again.</p>
-                        <p>I am looking for a new opportunity to expand my abilities. I needn't find the exact same sort of work, but I have a need to make things - to see the fruits of my labor set out into the world to help people get informed and connect with one another.</p>
-                        <p>The short version: code monkey looking for code to wrench.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <Summary />
               </div>
             </header>
             {/* Header Ends */}
