@@ -13,7 +13,6 @@ import opswat from './img/exp-opswat.png';
 import pantheon from './img/exp-pantheon.png';
 import radicaldesigns from './img/exp-radicaldesigns.png';
 
-
 class App extends Component {
   render() {
     return (
