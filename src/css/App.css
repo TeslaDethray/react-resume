@@ -41,10 +41,6 @@ a:hover, a:active, a:focus {
 	outline: 0;
 }
 
-hr {
-
-}
-
 :focus {
 	outline: none;
 }
@@ -164,7 +160,7 @@ hr {
 .resume {
 	margin-top: 50px;
 	margin-bottom: 50px;
-	border: 2px solid #fff;
+	border: 2px solid #ffffff;
 	padding-left: 20px;
 	padding-right: 20px;
 	box-shadow: inset 0px 0px 50px #e6e6e6, 0px 0px 50px #aaaaaa;
@@ -172,7 +168,8 @@ hr {
 
 .block {
 	padding-top: 70px;
-	padding-bottom: 60px
+	padding-bottom: 60px;
+	border-bottom: 1px solid #eeeeee;
 }
 
 .block-head {
@@ -182,7 +179,7 @@ hr {
 
 .block-head h2 {
 	display: inline;
-	color: #fff;
+	color: #ffffff;
 	font-size: 20px;
 	padding: 5px 15px 5px 15px;
 }
@@ -202,7 +199,6 @@ hr {
 header {
 	margin-right: 10px;
 	margin-left: 10px;
-	border-bottom: 1px solid #eee;
 }
 
 header .head-left {
@@ -276,34 +272,6 @@ header .head-right .head-item p {
 	font-size: 12px;
 }
 
-header .head-right .social {
-	margin-top: 20px;
-}
-
-header .head-right .social a i {
-	height: 35px;
-	width: 35px;
-	border-radius: 2px;
-	line-height: 35px;
-	color: #ffffff;
-	font-size: 15px;
-	text-align: center;
-	-webkit-transition: background 1s ease;
-	-moz-transition: background 1s ease;
-	-o-transition: background 1s ease;
-	-ms-transition: background 1s ease;
-	transition: background 1s ease;
-}
-
-header .head-right .social a i: hover {
-	background: #555555;
-	-webkit-transition: background 1s ease;
-	-moz-transition: background 1s ease;
-	-o-transition: background 1s ease;
-	-ms-transition: background 1s ease;
-	transition: background 1s ease;
-}
-
 header .head-right h4 {
 	margin-top: 20px;
 	margin-bottom: 13px;
@@ -333,22 +301,18 @@ header .head-right .head-obj p {
 
 /* Education Starts */
 
-.education {
-	border-bottom: 1px solid #eeeeee;
-}
-
-.education .navigation {
+.navigation {
 	font-size: 15px;
 	margin-bottom: 20px;
 	padding-right: 25px;
 	text-align: right;
 }
 
-.education .navigation li {
+.navigation li {
 	display: inline;
 }
 
-.education .navigation li button {
+.navigation li button {
 	padding: 5px 12px 5px 12px;
 	border-radius: 3px;
 	margin-right: 10px;
@@ -359,20 +323,17 @@ header .head-right .head-obj p {
 	line-height: normal;
 }
 
-.education .navigation li button:hover {
+.navigation li button:hover {
 	border-radius: 3px;
 	background: #f75353;
 }
 
-.education .navigation  li.active button {
+.navigation  li.active button {
 	background: #d22c2c;
 	text-decoration: none;
 }
 
-.education .tab-content {
-}
-
-.education .tab-content .tab-pane {
+.tab-content .tab-pane {
 	max-width: 550px;
 	border: 1px solid #dddddd;
 	border-top: 3px solid #f75353;
@@ -380,18 +341,18 @@ header .head-right .head-obj p {
 	padding: 23px;
 }
 
-.education .tab-content .tab-pane h3 {
+.tab-content .tab-pane h3 {
 	font-size: 20px;
 	margin-bottom: 14px;
 }
 
-.education .tab-content .tab-pane h5 {
+.tab-content .tab-pane h5 {
 	color: #999999;
 	margin-bottom: 10px;
 	font-size: 15px;
 }
 
-.education .tab-content .tab-pane p {
+.tab-content .tab-pane p {
 	font-size: 13px;
 }
 
@@ -399,26 +360,22 @@ header .head-right .head-obj p {
 
 /* Skills Starts */
 
-.skills {
-	border-bottom: 1px solid #eeeeee;
-}
-
-.skills .skill-item {
+.pictured-item {
 	margin-bottom: 25px;
 }
 
-.skills .skill-item .skill-img {
+.pictured-item .feature-img {
 	height: 75px;
 	width: 75px;
 	margin: 0 auto;
 }
 
-.skills .skill-item h4 {
+.pictured-item h4 {
 	margin-top: 15px;
 	margin-bottom: 10px;
 }
 
-.skills .skill-item p {
+.pictured-item p {
 	max-width: 250px;
 	margin: 0 auto;
 }
@@ -427,33 +384,29 @@ header .head-right .head-obj p {
 
 /* Experience Starts */
 
-.experience {
-	border-bottom: 1px solid #eeeeee;
-}
-
-.experience .exp-item {
+.bubble-item {
 	margin-top: 15px;
 	margin-bottom: 20px;
 }
 
-.experience .exp-item .item-img {
+.bubble-item .bubble-img {
 	height: 55px;
 	width: 150px;
 	margin: 0 auto;
 	margin-bottom: 5px;
 }
 
-.experience .exp-item .item-content {
+.bubble-item .item-content {
 	max-width: 200px;
 	padding: 8px;
 	margin: 0 auto;
 	position: relative;
-	background: #fff;
+	background: #ffffff;
 	border: 1px solid #dddddd;
 	box-shadow: 0px 0px 1px #dddddd;
 }
 
-.experience .exp-item .item-content:after, .experience .exp-item .item-content:before {
+.bubble-item .item-content:after, .bubble-item .item-content:before {
 	bottom: 100%;
 	left: 50%;
 	border: solid transparent;
@@ -464,26 +417,26 @@ header .head-right .head-obj p {
 	pointer-events: none;
 }
 
-.experience .exp-item .item-content:after {
+.bubble-item .item-content:after {
 	border-color: rgba(136, 183, 213, 0);
 	border-bottom-color: #ffffff;
 	border-width: 7px;
 	margin-left: -7px;
 }
 
-.experience .exp-item .item-content:before {
+.bubble-item .item-content:before {
 	border-color: rgba(0, 0, 0, 0);
 	border-bottom-color: #cccccc;
 	border-width: 8px;
 	margin-left: -8px;
 }
 
-.experience .exp-item .item-content h4 {
+.bubble-item .item-content h4 {
 	font-size: 16px;
 	margin-bottom: 10px;
 }
 
-.experience .exp-item .item-content h5 {
+.bubble-item .item-content h5 {
 	font-size: 12px;
 	margin-bottom: 5px;
 }
@@ -492,8 +445,13 @@ header .head-right .head-obj p {
 
 /* Contact Starts */
 
+form {
+	max-width: 350px;
+	margin: 0 auto;
+	margin-top: 10px;
+}
 
-.contact h3 {
+form h3 {
 	border-bottom: 1px solid #eeeeee;
 	padding-bottom: 10px;
 	max-width: 350px;
@@ -501,41 +459,35 @@ header .head-right .head-obj p {
 	font-size: 20px;
 }
 
-.contact form {
-	max-width: 350px;
-	margin: 0 auto;
-	margin-top: 10px;
-}
-
-.contact .form .form-group label {
+.form .form-group label {
 	font-weight: normal;
 }
 
-.contact .con-detail .con-item {
+.icon-item {
 	width: 180px;
 	margin-top: 30px;
 	margin-bottom: 30px;
 }
 
-.contact .con-detail .con-item .con-img {
+.icon-item .icon-img {
 	float: left;
 	width: 50px;
 }
 
-.contact .con-detail .con-item .con-content {
+.icon-item .icon-content {
 	margin-left: 60px;
 }
 
-.contact .con-detail .con-item .con-img label {
+.icon-item .icon-img label {
 	font-size: 35px;
 }
 
-.contact .con-detail .con-item .con-content h4 {
+.icon-item .icon-content h4 {
 	font-size: 20px;
 	margin-bottom: 10px;
 }
 
-.contact .con-detail .con-item .con-content h5 {
+.icon-item .icon-content h5 {
 	font-size: 15px;
 	color: #999999;
 	margin-bottom: 5px;
@@ -596,24 +548,24 @@ footer p a {
 /* Mobile phones */
 @media (max-width: 480px) {
 
-	.contact form {
+	form {
 		max-width: 300px;
 		padding-left: 8px;
 		padding-right: 8px;
 	}
 	
-	.contact .con-detail .con-item {
+	.icon-item {
 		max-width: 100px;
 		margin: 0 auto;
 	}
 	
-	.contact .con-detail .con-item .con-img {
+	.icon-item .icon-img {
 		float: none !important;
 		width: 30px;
 		margin: 0 auto;
 	}
 	
-	.contact .con-detail .con-item .con-content {
+	.icon-item .icon-content {
 		max-width: 150px;
 		margin: 0 auto;
 		text-align: center;
@@ -658,58 +610,41 @@ footer p a {
 		text-align: center;
 	}
 	
-	.block-head h2 {
-		margin-bottom: 15px;
-	}
-	
 	.block-head p {
 		max-width: 400px;
 		margin: 0 auto;
 		margin-bottom: 20px;
 	}
 	
-	.education .navigation {
+	.navigation {
 		text-align: center;
 		margin-top: 10px;
 	}
 	
-	.education .tab-content {
+	.tab-content {
 		max-width: 500px;
 		margin: 0 auto;
 	}
 	
-	.skills h2 {
-		margin-bottom: 10px;
-	}
-	
-	.skills .skill-item {
+	.pictured-item {
 		margin-bottom: 25px;
 	}
 	
-	.skills .skill-item .skill-img {
+	.pictured-item .feature-img {
 		margin-top: 10px;
 	}
 	
-	.skills .skill-item p {
+	.pictured-item p {
 		max-width: 280px;
 		line-height: 22px;
 		margin: 0 auto;
 	}
 	
-	.experience h2 {
+	.bubble-item {
 		margin-bottom: 30px;
 	}
 	
-	.experience .exp-item {
-		margin-bottom: 30px;
-	}
-	
-	.contact .con-detail {
-		max-width: 400px !important;
-		margin: 0 auto !important;
-	}
-	
-	.contact .con-detail .con-item {
+	.icon-item {
 		margin-bottom: 10px;
 	}
 }
@@ -732,20 +667,15 @@ footer p a {
 		line-height: 130px;
 	}
 	
-	.contact h3 {
+	h3 {
 		max-width: 400px;
 		margin: 0 auto;
 	}
 	
-	.contact .form {
+	.form {
 		max-width: 400px;
 		margin: 0 auto;
 		margin-top: 20px;
-	}
-	
-	.contact .con-detail {
-		max-width: 450px;
-		margin: 0 auto;
 	}
 	
 }
@@ -764,4 +694,8 @@ a.button {
 }
 a.button:active {
     box-shadow: none;
+}
+
+.img-responsive {
+	display: inline-block;
 }
