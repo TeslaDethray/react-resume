@@ -246,7 +246,7 @@ class App extends Component {
               </Column>
               <Column span='8'>
                 <Summary>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla efficitur scelerisque purus nec vehicula. Vivamus rutrum aliquam risus. Nam quis turpis pulvinar leo egestas facilisis ac vitae massa. Donec convallis orci vitae ullamcorper condimentum. Phasellus ac euismod odio. Ut viverra augue at est porttitor, at scelerisque lectus imperdiet. Nulla vel eleifend quam. Nullam et iaculis diam. Phasellus nec facilisis ligula.</p>
+                  <p>Once I finished porting this resume into React, I said, "Oh god, now I have to write about myself." I will update this once I've finally forced myself to do this again. It's painful, yo.</p>
                   <p>Nullam pretium ultricies blandit. Suspendisse elementum elementum lorem eu semper. Vivamus sit amet justo justo. Integer faucibus velit diam, sed iaculis dolor consequat sit amet. Duis et augue luctus odio ultricies scelerisque. Phasellus consequat a sem vitae commodo.</p>
                   <p>Suspendisse varius euismod ligula eget eleifend. Morbi laoreet mauris ut neque consequat, quis feugiat mauris cursus. Aliquam ultrices purus sed suscipit suscipit.</p>
                 </Summary>
